@@ -1,13 +1,11 @@
 package mx.tec.mobile.lab.vo;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -16,16 +14,19 @@ public class Donation {
 	@Id
 	@GeneratedValue	
 	private long id;
+	
 	private String donador;
 	private String tienda;
 	private float kilos;
-	private Date fecha;
+	
+	@JsonFormat(pattern="yyyy-M-dd",timezone = "GMT-6")
+	private Calendar fecha;
 
 	public Donation() {
 		
 	}
 	
-	public Donation(String donador, String tienda, float kilos, Date fecha){
+	public Donation(String donador, String tienda, float kilos, Calendar fecha){
 		this.donador = donador;
 		this.tienda = tienda;
 		this.kilos = kilos;
@@ -56,14 +57,17 @@ public class Donation {
 		return this.kilos;
 	}
 	
-	public void setFecha(Date fecha){
+	/*public void setFecha(String fecha){
 		this.fecha = fecha;
 	}
-	
-	public Date getFecha(){
+	*/
+	public Calendar getFecha(){
 		return this.fecha;
 	}
 	
-
+	@Override
+	public int hashCode() {
+		return Objects.hash(donador, tienda, kilos, fecha);
+	}
 }
 
