@@ -10,12 +10,7 @@ import mx.tec.mobile.lab.tools.CreateDonation;
 import mx.tec.mobile.lab.vo.Donation;
 
 @RestController
-public class createDonationController {
-
-	public createDonationController() {
-		
-	}
-		
+public class createDonationController {		
 	@Autowired
 	CreateDonation createDonation;
 		
