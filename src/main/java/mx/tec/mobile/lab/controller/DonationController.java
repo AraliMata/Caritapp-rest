@@ -25,7 +25,7 @@ public class DonationController {
 		//return manager.retrieveDonation(id).get();
 		//throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 		Optional<Donation> retrievedDonation = manager.retrieveDonation(id);
-		if (retrievedDonation.isEmpty()) {
+		if (!retrievedDonation.isPresent()) {
 			//return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 		}
