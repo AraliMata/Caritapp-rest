@@ -19,7 +19,7 @@ public class Donation {
 	private String tienda;
 	private float kilos;
 	
-	@JsonFormat(pattern="yyyy-M-dd",timezone = "GMT-6")
+	@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT-6")
 	private Calendar fecha;
 
 	public Donation() {
