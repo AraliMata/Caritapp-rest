@@ -10,7 +10,7 @@ import mx.tec.mobile.lab.vo.Donation;
 
 @Repository
 public interface CalendarRepository extends JpaRepository<Donation, Long> {
-	@Query(value = "SELECT * FROM events WHERE event_date Like %?1%", nativeQuery = true)
-	List<Donation> findByDate(@Param ("eventDate") String eventDate);
+	/*@Query(value = "SELECT * FROM events WHERE event_date Like %?1%", nativeQuery = true)
+	List<Donation> findByDate(@Param ("eventDate") String eventDate);*/
 	
 }

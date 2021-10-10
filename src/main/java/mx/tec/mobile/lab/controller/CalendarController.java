@@ -32,6 +32,7 @@ public class CalendarController {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
 		String strDate = dateFormat.format(date);  
 		return manager.getHistory(strDate);
+		//return manager.getHistory();
 	}
 	
 

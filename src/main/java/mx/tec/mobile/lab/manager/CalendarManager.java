@@ -13,7 +13,8 @@ public class CalendarManager {
 	CalendarRepository repositoryCalendar;
 
 	public List<Donation> getHistory(String date) {
-		return repositoryCalendar.findByDate(date);
+		//return repositoryCalendar.findByDate(date);
+		return repositoryCalendar.findAll();
 	}
 
 }
