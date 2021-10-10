@@ -32,7 +32,7 @@ public class CalendarController {
 		//@RequestBody Calendar date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
 		String strDate = dateFormat.format("2021-12-30 15:12:03");  
-		return manager.getHistory(strDate);
+		return manager.getHistory();
 		//return manager.getHistory();
 	}
 	
