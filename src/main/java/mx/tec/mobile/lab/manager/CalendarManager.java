@@ -12,8 +12,9 @@ public class CalendarManager {
 	@Resource 
 	CalendarRepository repositoryCalendar;
 
-	public List<Donation> getHistory(String date) {
-		return repositoryCalendar.findByDate(date);
+	public List<Donation> getHistory() {
+		//return repositoryCalendar.findByDate(date);
+		return repositoryCalendar.findAll();
 	}
 
 }

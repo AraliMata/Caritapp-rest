@@ -28,10 +28,12 @@ public class CalendarController {
 	CalendarManager manager;
 		
 	@GetMapping("/calendar/history")
-	public List<Donation> getHistory(@RequestBody Calendar date) {
+	public List<Donation> getHistory() {
+		//@RequestBody Calendar date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
-		String strDate = dateFormat.format(date);  
-		return manager.getHistory(strDate);
+		String strDate = dateFormat.format("2021-12-30 15:12:03");  
+		return manager.getHistory();
+		//return manager.getHistory();
 	}
 	
 
