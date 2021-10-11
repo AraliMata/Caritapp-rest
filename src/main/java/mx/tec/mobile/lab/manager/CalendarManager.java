@@ -1,20 +1,21 @@
 package mx.tec.mobile.lab.manager;
 
 import java.util.List;
-
 import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
-import mx.tec.mobile.lab.vo.Donation;
+
 import mx.tec.mobile.lab.repository.CalendarRepository;
+import mx.tec.mobile.lab.vo.Donation;
 
 @Service
 public class CalendarManager {
-	@Resource 
-	CalendarRepository repositoryCalendar;
-
+	@Resource
+	CalendarRepository repository;
+	
 	public List<Donation> getHistory() {
-		//return repositoryCalendar.findByDate(date);
-		return repositoryCalendar.findAll();
+		return repository.findAll(); 
+		
 	}
 
 }

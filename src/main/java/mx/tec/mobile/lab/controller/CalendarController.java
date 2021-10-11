@@ -1,14 +1,11 @@
 package mx.tec.mobile.lab.controller;
-
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RestController;
-import java.text.DateFormat;  
-import java.text.SimpleDateFormat;  
+
 
 import mx.tec.mobile.lab.manager.CalendarManager;
 import mx.tec.mobile.lab.tools.CreateDonation;
@@ -28,12 +25,8 @@ public class CalendarController {
 	CalendarManager manager;
 		
 	@GetMapping("/calendar/history")
-	public List<Donation> getHistory() {
-		//@RequestBody Calendar date
-		//DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");  
-		//String strDate = dateFormat.format("2021-12-30 15:12:03");  
+	public List<Donation> getHistory() { 
 		return manager.getHistory();
-		//return manager.getHistory();
 	}
 	
 

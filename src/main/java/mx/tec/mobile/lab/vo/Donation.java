@@ -65,6 +65,10 @@ public class Donation {
 		return this.fecha;
 	}
 	
+	public long getId() {
+		return this.id;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(donador, tienda, kilos, fecha);
