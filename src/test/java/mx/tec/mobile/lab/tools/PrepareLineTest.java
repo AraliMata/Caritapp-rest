@@ -1,12 +1,19 @@
 package mx.tec.mobile.lab.tools;
-import mx.tec.mobile.lab.manager.DonationManager;
-import mx.tec.mobile.lab.vo.*;
+
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
-public class PrepareLineTest {
-	PrepareLine prepareLine = new PrepareLine();
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import mx.tec.mobile.lab.manager.DonationManager;
+import mx.tec.mobile.lab.vo.Donation;
+import mx.tec.mobile.lab.vo.Linea;
+
+class PrepareLineTest {
+	@Autowired
+	PrepareLine prepareLine;
 	
 	@Test
 	void allocateDonationTest() {
@@ -18,14 +25,14 @@ public class PrepareLineTest {
 		Donation donation = manager.retrieveDonation(89).get();
 		List<Linea> input = List.of(product1, product2);
 		
+		
 		//When
 		List<Linea> result = prepareLine.allocateDonation(donation, input);
 		
 		//Then
-		Donation expected = donation;
-		assertEquals(expected, result.get(0).getDonation());
+		long expected = 89;
+		assertEquals(expected, result.get(0).getDonation().getId());
 		
 	}
 
 }
-
