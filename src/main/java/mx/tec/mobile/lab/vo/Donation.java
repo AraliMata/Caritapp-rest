@@ -7,18 +7,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Donation {
+	@JsonIgnore
 	@Id
 	@GeneratedValue	
 	private long id;
 	
+	@JsonProperty
 	private String donador;
+	@JsonProperty
 	private String tienda;
+	@JsonProperty
 	private float kilos_donados;
+	@JsonProperty
 	private float kilos_recibidos;
 	
+	@JsonProperty
 	@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT-6")
 	private Calendar fecha;
 
