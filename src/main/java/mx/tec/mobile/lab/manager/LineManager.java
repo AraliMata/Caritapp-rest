@@ -13,5 +13,9 @@ public class LineManager {
 	public void addProducts(List<Linea> products) {
 		repository.saveAll(products);
 	}
+	
+	public List<Linea> retreiveProducts(){
+		return repository.findAll(); 
+	}
 
 }
