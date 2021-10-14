@@ -5,19 +5,20 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Calendar;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-
-class TemperatureManagerTest {
+class DonationManagerTest {
+	@Autowired
+	DonationManager manager = new DonationManager();
+	
 	@Test
 	void testAddDonationToHistory() {
 		// Given
-		DonationManager manager = new DonationManager();
-		
-		// When
 		Donation donation = new Donation("Walmart", "Juventud", 19.2f, 19.0f, Calendar.getInstance());
 		long idDonation = donation.getId();
-		manager.addDonationToHistory(donation);
 		
+		// When
+		manager.addDonationToHistory(donation);
 		
 		// Then
 		assertTrue(manager.retrieveDonation(idDonation).get().equals(donation));

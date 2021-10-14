@@ -20,7 +20,7 @@ public class PrepareLine {
 		for (Linea producto : productos) 
 		{ 
 		    producto.setDonation(donacion);
-		    System.out.println("Producto: " + producto.getCantidadRecibida()+" "+producto.getCantidadSupuesta());
+		    System.out.print(donacion.getId());
 		    productos_actualizados.add(producto);
 		}
 		
