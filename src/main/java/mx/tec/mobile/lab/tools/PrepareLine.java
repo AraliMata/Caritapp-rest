@@ -11,7 +11,7 @@ import mx.tec.mobile.lab.vo.Linea;
 public class PrepareLine {
 
 	public PrepareLine() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public List<Linea> allocateDonation(Donation donacion, List<Linea> productos) {
