@@ -2,6 +2,7 @@ package mx.tec.mobile.lab.vo;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,8 +17,10 @@ public class Donation {
 	
 	private String donador;
 	private String tienda;
-	private float kilos_donados;
-	private float kilos_recibidos;
+	@Column(name = "kilos_donados")
+	private float kilosDonados;
+	@Column(name = "kilos_recibidos")
+	private float kilosRecibidos;
 	
 	@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT-6")
 	private Calendar fecha;
