@@ -2,6 +2,7 @@ package mx.tec.mobile.lab.vo;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,10 +22,15 @@ public class Donation {
 	private String donador;
 	@JsonProperty
 	private String tienda;
+
 	@JsonProperty
-	private float kilos_donados;
+	@Column(name = "kilos_donados")
+	private float kilosDonados;
+	
 	@JsonProperty
-	private float kilos_recibidos;
+	@Column(name = "kilos_recibidos")
+	private float kilosRecibidos;
+
 	
 	@JsonProperty
 	@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT-6")
@@ -37,8 +43,8 @@ public class Donation {
 	public Donation(String donador, String tienda, float kilos_donados, float kilos_recibidos, Calendar fecha){
 		this.donador = donador;
 		this.tienda = tienda;
-		this.kilos_donados = kilos_donados;
-		this.kilos_recibidos = kilos_recibidos;
+		this.kilosDonados = kilos_donados;
+		this.kilosRecibidos = kilos_recibidos;
 		this.fecha = fecha;
 	}
 	
@@ -59,19 +65,19 @@ public class Donation {
 	}
 	
 	public void setKilosDonados(float kilos){
-		this.kilos_donados = kilos;
+		this.kilosDonados = kilos;
 	}
 	
 	public float getKilosDonados(){
-		return this.kilos_donados;
+		return this.kilosDonados;
 	}
 	
 	public void setKilosRecibidos(float kilos){
-		this.kilos_recibidos = kilos;
+		this.kilosRecibidos = kilos;
 	}
 	
 	public float getKilosRecibidos(){
-		return this.kilos_recibidos;
+		return this.kilosRecibidos;
 	}
 	
 	public void setFecha(Calendar fecha){
