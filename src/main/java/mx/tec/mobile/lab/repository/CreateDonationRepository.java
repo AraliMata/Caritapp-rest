@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import mx.tec.mobile.lab.vo.Donation;
 
 @Repository
-@Transactional
 public interface CreateDonationRepository extends JpaRepository<Donation, Long> {
 	
 }

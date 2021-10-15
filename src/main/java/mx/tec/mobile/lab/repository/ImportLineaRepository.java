@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import mx.tec.mobile.lab.vo.Linea;
 
 @Repository
-@Transactional
 public interface ImportLineaRepository extends JpaRepository<Linea, Long> {
 	
 }
