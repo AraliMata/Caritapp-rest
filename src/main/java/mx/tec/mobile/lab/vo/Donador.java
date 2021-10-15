@@ -4,12 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity 
 public class Donador {
-	@JsonIgnore
+	@JsonProperty
 	@Id
 	@GeneratedValue	
 	private long id;
@@ -21,8 +20,9 @@ public class Donador {
 		
 	}
 	
-	public Donador(String nombre) {
+	public Donador(long id, String nombre) {
 		this.nombre = nombre;
+		this.id = id;
 	}
 	
 	public long getId() {
