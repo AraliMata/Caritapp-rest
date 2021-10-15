@@ -2,6 +2,7 @@ package mx.tec.mobile.lab.vo;
 
 import java.util.Objects;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,15 +21,19 @@ public class Linea {
 	@JsonProperty
 	private String upc;
 	@JsonProperty
-	private Float cantidad_recibida;
+	@Column(name = "cantidad_recibida")
+	private Float cantidadRecibida;
 	@JsonProperty
-	private Float cantidad_supuesta;
+	@Column(name = "cantidad_supuesta")
+	private Float cantidadSupuesta;
 	@JsonProperty
 	private String destino;
 	@JsonProperty
-	private Float precio_total;
+	@Column(name = "precio_total")
+	private Float precioTotal;
 	@JsonProperty
-	private Float precio_unitario;
+	@Column(name = "precio_unitario")
+	private Float precioUnitario;
 	
 	
 	@JsonIgnore
@@ -41,11 +46,11 @@ public class Linea {
 	}
 	
 	public Linea(String upc, String dest,  Float cant_rec, Float cant_sup,  Float prec_tot,  Float prec_un) {
-		this.cantidad_recibida = cant_rec;
-		this.cantidad_supuesta = cant_sup;
+		this.cantidadRecibida = cant_rec;
+		this.cantidadSupuesta = cant_sup;
 		this.destino = dest;
-		this.precio_total = prec_tot;
-		this.precio_unitario = prec_un;
+		this.precioTotal = prec_tot;
+		this.precioUnitario = prec_un;
 		this.upc = upc;		
 	}
 	
@@ -54,19 +59,19 @@ public class Linea {
 	}
 	
 	public Float getCantidadSupuesta() {
-		return this.cantidad_supuesta;
+		return this.cantidadSupuesta;
 	}
 	
 	public Float getCantidadRecibida() {
-		return this.cantidad_recibida;
+		return this.cantidadRecibida;
 	}
 	
 	public Float getPrecioUnitario() {
-		return this.precio_unitario;
+		return this.precioUnitario;
 	}
 	 
 	public Float getPrecioTotal() {
-		return this.precio_total;
+		return this.precioTotal;
 	}
 	
 	public String getDestino() {
@@ -83,7 +88,7 @@ public class Linea {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(upc, cantidad_supuesta, cantidad_recibida, precio_unitario, precio_total, destino);
+		return Objects.hash(upc, cantidadSupuesta, cantidadRecibida, precioUnitario, precioTotal, destino);
 	}
 	
 }

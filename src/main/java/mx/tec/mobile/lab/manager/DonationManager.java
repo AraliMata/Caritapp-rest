@@ -3,17 +3,16 @@ package mx.tec.mobile.lab.manager;
 import java.util.Optional;
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mx.tec.mobile.lab.repository.CreateDonationRepository;
+import mx.tec.mobile.lab.repository.DonationRepository;
 import mx.tec.mobile.lab.vo.Donation;
 
 @Service
 public class DonationManager {
 	
 	@Resource
-	CreateDonationRepository repository;
+	DonationRepository repository;
 	
 	public DonationManager() {
 		

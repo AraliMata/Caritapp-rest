@@ -1,14 +1,11 @@
 package mx.tec.mobile.lab.repository;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import mx.tec.mobile.lab.vo.Linea;
+import mx.tec.mobile.lab.vo.Donador;
 
 @Repository
-public interface ImportLineaRepository extends JpaRepository<Linea, Long> {
-	
-}
+public interface DonorRepository extends JpaRepository<Donador, Long> {
 
+}
