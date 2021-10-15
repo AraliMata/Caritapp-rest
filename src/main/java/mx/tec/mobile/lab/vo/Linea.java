@@ -1,21 +1,14 @@
 package mx.tec.mobile.lab.vo;
 
 import java.util.Objects;
-
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
-//Crear función para asignar donación a cada una de las lineas que reciba, para luego 
-// pasarlas a la bdd O(n)
-//El id de donación lo voy a recibir por el url, voy a hacer un get de esa donación por id y luego la voy a pasar a cada producto con un set
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity 
 public class Linea {
@@ -24,11 +17,17 @@ public class Linea {
 	@GeneratedValue	
 	private long id;	
 	
+	@JsonProperty
 	private String upc;
+	@JsonProperty
 	private Float cantidad_recibida;
+	@JsonProperty
 	private Float cantidad_supuesta;
+	@JsonProperty
 	private String destino;
+	@JsonProperty
 	private Float precio_total;
+	@JsonProperty
 	private Float precio_unitario;
 	
 	

@@ -37,13 +37,14 @@ public class createDonationController {
 	}
 	
 	@PostMapping("/donation/createDonation/importProducts/{id}")
-	public List<Linea> importProducts(@RequestBody List<Linea> products, @PathVariable(value = "id") long id) {
+	public String importProducts(@RequestBody List<Linea> products, @PathVariable(value = "id") long id) {
 		Donation donation_created = manager.retrieveDonation(id).get();
 		System.out.println("Producto primera parte: " + products.get(0).getUpc() + products.get(0).getCantidadRecibida()+" "+products.get(0).getCantidadSupuesta());
 		List<Linea> prepared_products = prepareLine.allocateDonation(donation_created, products);
 		productManager.addProducts(prepared_products);
-		//return "200";
-		return prepared_products;
+		
+		return "200";
+		//return prepared_products;
 	}
 	
 	
