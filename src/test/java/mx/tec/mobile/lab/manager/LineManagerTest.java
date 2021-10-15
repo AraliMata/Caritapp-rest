@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.manager;
+/* package mx.tec.mobile.lab.manager;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
@@ -35,3 +35,4 @@ public class LineManagerTest {
 	
 
 }
+*/

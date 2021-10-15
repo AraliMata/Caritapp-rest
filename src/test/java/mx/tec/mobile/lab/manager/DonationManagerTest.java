@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.manager;
+/*package mx.tec.mobile.lab.manager;
 import mx.tec.mobile.lab.vo.Donation;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +24,7 @@ class DonationManagerTest {
 		assertTrue(manager.retrieveDonation(idDonation).get().equals(donation));
 	}
 	
-	/* @Test
+	@Test
 	void testRetrieveDonation() {
 		//Given 
 		DonationManager manager = new DonationManager();
@@ -37,6 +37,7 @@ class DonationManagerTest {
 		//Then
 		assertTrue(donation_retreived)
 		
-	}*/
+	}
 
 }
+*/
