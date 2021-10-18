@@ -1,38 +1,57 @@
-/* package mx.tec.mobile.lab.manager;
+package mx.tec.mobile.lab.manager;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 import java.util.List;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import mx.tec.mobile.lab.repository.DonationRepository;
+import mx.tec.mobile.lab.repository.LineaRepository;
 import mx.tec.mobile.lab.tools.PrepareLine;
 import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
 
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
 public class LineManagerTest {
+	@Resource  
 	@Autowired
-	LineManager manager;
+	private LineaRepository lineRepository;
+	@Resource
 	@Autowired
-	DonationManager donationManager;
-	@Autowired
-	PrepareLine prepareLine = new PrepareLine();
+	private DonationRepository donationRepository;
 	
 	@Test
-	void testAddDonationToHistory() {
+	void testAddProducts() {
+		DonationManager donationManager = new DonationManager();
+		donationManager.repository = this.donationRepository;
+		
+		LineManager manager = new LineManager();
+		manager.repository = this.lineRepository;
+		
+		PrepareLine prepareLine = new PrepareLine();
+		
 		// Given
 		Linea product1 =new Linea("189087", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f);
-		Linea product2 =new Linea("189089", "Indefinido", 34.5f, 34.5f, 42.0f, 5.0f);
-		Donation donation = donationManager.retrieveDonation(89).get();
-		List<Linea> products = List.of(product1, product2);
+		Donation donation = donationManager.retrieveDonation(129).get();
+		List<Linea> products = new ArrayList<Linea>();
+		products.add(product1);
 		List<Linea> input = prepareLine.allocateDonation(donation, products);
 		
 		// When
-		manager.addProducts(input);
+		List<Linea> output = manager.addProducts(input);
 		
 		// Then
-		assertTrue(manager.retreiveProducts().contains(product1));
+		assertEquals(input, output);
 	}
 	
 
 }
-*/

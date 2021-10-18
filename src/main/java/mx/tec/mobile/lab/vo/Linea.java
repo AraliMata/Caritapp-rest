@@ -1,7 +1,6 @@
 package mx.tec.mobile.lab.vo;
 
 import java.util.Objects;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,7 +36,7 @@ public class Linea {
 	
 	
 	@JsonIgnore
-	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	@ManyToOne(optional = false)
 	private Donation donacion;
 	
 

@@ -13,10 +13,10 @@ import mx.tec.mobile.lab.vo.Donador;
 public class DonorManager {
 	@Resource
 	@Autowired
-	DonorRepository repository;
+	public DonorRepository repository;
 	
-	public void addDonors(List<Donador> donadores) {
-		repository.saveAll(donadores);
+	public List<Donador> addDonors(List<Donador> donadores) {
+		return repository.saveAll(donadores);
 	}
 	
 	public Donador retrieveDonor(long id) {

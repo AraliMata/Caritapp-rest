@@ -12,14 +12,14 @@ import mx.tec.mobile.lab.vo.Donation;
 public class DonationManager {
 	
 	@Resource
-	DonationRepository repository;
+	public DonationRepository repository;
 	
 	public DonationManager() {
 		
 	}
 
-	public void addDonationToHistory(Donation donation) {
-		repository.save(donation);
+	public Donation addDonationToHistory(Donation donation) {
+		return repository.save(donation);
 	}
 	
 	public Optional<Donation> retrieveDonation(long id) {

@@ -15,9 +15,9 @@ import mx.tec.mobile.lab.vo.Linea;
 import mx.tec.mobile.lab.tools.PrepareLine;
 
 @RestController
-public class createDonationController {
+public class CreateDonationController {
 
-	public createDonationController() {
+	public CreateDonationController() {
 		
 	}
 		
@@ -32,19 +32,18 @@ public class createDonationController {
 	@PostMapping("/donation/createDonation/create")
 	public long createNewDonation(@RequestBody Donation donation) {
 		Donation prepared_donation = new Donation(donation.getDonador(), donation.getTienda(), donation.getKilosDonados(), donation.getKilosRecibidos(), donation.getFecha());
-		manager.addDonationToHistory(prepared_donation);
-		return prepared_donation.getId();
+		Donation added_donation = manager.addDonationToHistory(prepared_donation);
+		
+		return added_donation.getId();
 	}
 	
 	@PostMapping("/donation/createDonation/importProducts/{id}")
-	public String importProducts(@RequestBody List<Linea> products, @PathVariable(value = "id") long id) {
+	public List<Linea> importProducts(@RequestBody List<Linea> products, @PathVariable(value = "id") long id) {
 		Donation donation_created = manager.retrieveDonation(id).get();
-		System.out.println("Producto primera parte: " + products.get(0).getUpc() + products.get(0).getCantidadRecibida()+" "+products.get(0).getCantidadSupuesta());
 		List<Linea> prepared_products = prepareLine.allocateDonation(donation_created, products);
-		productManager.addProducts(prepared_products);
+		List<Linea> added_products = productManager.addProducts(prepared_products);
 		
-		return "200";
-		//return prepared_products;
+		return added_products;
 	}
 	
 	
