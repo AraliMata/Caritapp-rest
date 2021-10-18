@@ -1,6 +1,5 @@
 package mx.tec.mobile.lab.vo;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,7 +22,7 @@ public class Tienda {
 	private String ubicacion;
 	
 	@JsonIgnore
-	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	@ManyToOne(optional = false)
 	private Donador donador;
 	
 	
