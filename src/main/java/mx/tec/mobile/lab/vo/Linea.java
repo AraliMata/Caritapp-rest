@@ -33,6 +33,8 @@ public class Linea {
 	@JsonProperty
 	@Column(name = "precio_unitario")
 	private Float precioUnitario;
+	@JsonProperty
+	private String status;
 	
 	
 	@JsonIgnore
