@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.manager;
+/*package mx.tec.mobile.lab.manager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +38,7 @@ class DonorManagerTest {
 		//Then
 		assertEquals(input.get(0).getNombre(), output.get(0).getNombre());
 		
-	}*/
+	}
 
 	@Test
 	void retrieveDonorTest() {
@@ -68,4 +68,4 @@ class DonorManagerTest {
 		assertEquals("Alsuper", output.get(0).getNombre());
 	}
 
-}
+}*/

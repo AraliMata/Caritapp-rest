@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.tools;
+/*package mx.tec.mobile.lab.tools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,4 +45,4 @@ class PrepareLineTest {
 		
 	}
 
-}
+}*/

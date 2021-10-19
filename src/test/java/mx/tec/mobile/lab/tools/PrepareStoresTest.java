@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.tools;
+/*package mx.tec.mobile.lab.tools;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,4 +42,4 @@ class PrepareStoresTest {
 		assertEquals(output.get(0).getDonador(), donador);
 	}
 
-}
+}*/

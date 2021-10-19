@@ -1,4 +1,4 @@
-package mx.tec.mobile.lab.manager;
+/*package mx.tec.mobile.lab.manager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,4 +54,4 @@ public class LineManagerTest {
 	}
 	
 
-}
+}*/
