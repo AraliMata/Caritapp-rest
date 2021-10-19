@@ -46,13 +46,14 @@ public class Linea {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Linea(String upc, String dest,  Float cant_rec, Float cant_sup,  Float prec_tot,  Float prec_un) {
+	public Linea(String upc, String dest,  Float cant_rec, Float cant_sup,  Float prec_tot,  Float prec_un, String status) {
 		this.cantidadRecibida = cant_rec;
 		this.cantidadSupuesta = cant_sup;
 		this.destino = dest;
 		this.precioTotal = prec_tot;
 		this.precioUnitario = prec_un;
-		this.upc = upc;		
+		this.upc = upc;
+		this.status = status;
 	}
 	
 	public String getUpc() {

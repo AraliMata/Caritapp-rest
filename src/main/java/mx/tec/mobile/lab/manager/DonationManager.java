@@ -1,5 +1,6 @@
 package mx.tec.mobile.lab.manager;
 
+import java.util.List;
 import java.util.Optional;
 import javax.annotation.Resource;
 
@@ -24,6 +25,10 @@ public class DonationManager {
 	
 	public Optional<Donation> retrieveDonation(long id) {
 		return repository.findById(id); 
+	}
+	
+	public List<Donation> retrieveDonations(){
+		return repository.findAll();
 	}
 
 }

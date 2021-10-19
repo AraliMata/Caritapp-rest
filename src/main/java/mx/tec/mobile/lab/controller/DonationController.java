@@ -1,5 +1,6 @@
 package mx.tec.mobile.lab.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,10 @@ public class DonationController {
 			//return new ResponseEntity<>(retrievedDonation.get(), HttpStatus.OK);
 			return retrievedDonation.get();
 		}
+	}
+	
+	@GetMapping("/donation/getDonations")
+	public List<Donation> getDonation(){
+		return manager.retrieveDonations();
 	}
 }
