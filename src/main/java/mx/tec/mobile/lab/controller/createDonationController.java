@@ -12,7 +12,7 @@ import mx.tec.mobile.lab.manager.DonationManager;
 import mx.tec.mobile.lab.manager.LineManager;
 import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
-import mx.tec.mobile.lab.tools.PrepareLine;
+import mx.tec.mobile.lab.tools.Prepare;
 
 @RestController
 public class createDonationController {
@@ -26,7 +26,7 @@ public class createDonationController {
 	@Autowired
 	LineManager productManager;
 	@Autowired
-	PrepareLine prepareLine;
+	Prepare prepareLine;
 	
 		
 	@PostMapping("/donation/createDonation/create")
