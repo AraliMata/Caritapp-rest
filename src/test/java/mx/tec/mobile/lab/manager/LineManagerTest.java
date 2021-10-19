@@ -40,7 +40,7 @@ public class LineManagerTest {
 		PrepareLine prepareLine = new PrepareLine();
 		
 		// Given
-		Linea product1 =new Linea("189087", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f);
+		Linea product1 =new Linea("189087", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f, "no entregado");
 		Donation donation = donationManager.retrieveDonation(129).get();
 		List<Linea> products = new ArrayList<Linea>();
 		products.add(product1);

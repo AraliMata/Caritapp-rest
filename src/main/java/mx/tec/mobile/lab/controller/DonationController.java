@@ -34,6 +34,12 @@ public class DonationController {
 		}
 	}
 	
+
+	@GetMapping("/donation/getDonations")
+	public List<Donation> getDonation(){
+		return manager.retrieveDonations();
+	}
+
 	// Get a list of products (Linea objects) by Donation id
 	@GetMapping("/donation/{id}/products")
 	public List<Linea> getProducts(@PathVariable(value = "id") long id) {
