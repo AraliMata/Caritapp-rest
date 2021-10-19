@@ -15,9 +15,9 @@ import mx.tec.mobile.lab.vo.Linea;
 import mx.tec.mobile.lab.tools.PrepareLine;
 
 @RestController
-public class CreateDonationController {
+public class createDonationController {
 
-	public CreateDonationController() {
+	public createDonationController() {
 		
 	}
 		
