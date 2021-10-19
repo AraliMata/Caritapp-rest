@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import mx.tec.mobile.lab.manager.DonationManager;
-import mx.tec.mobile.lab.manager.LineManager;
+import mx.tec.mobile.lab.tools.Prepare;
 import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
 
@@ -19,6 +19,8 @@ import mx.tec.mobile.lab.vo.Linea;
 public class DonationController {
 	@Autowired
 	DonationManager manager;
+	@Autowired
+	Prepare prepare;
 	
 	// Get a donation object by id
 	@GetMapping("/donation/{id}")
@@ -34,9 +36,17 @@ public class DonationController {
 		}
 	}
 	
+	//Get a list of ids of all the donations
+	@GetMapping("/donation/getIdDonations")
+	public List<String> getDonationsId(){
+		List<Donation> donations = manager.retrieveDonations();
+		return prepare.getDonationsId(donations);
+	}
 
+	
+	//Get a list of all the donations
 	@GetMapping("/donation/getDonations")
-	public List<Donation> getDonation(){
+	public List<Donation> getDonations(){
 		return manager.retrieveDonations();
 	}
 

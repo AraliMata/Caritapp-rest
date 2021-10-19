@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import mx.tec.mobile.lab.manager.DonorManager;
 import mx.tec.mobile.lab.manager.StoreManager;
-import mx.tec.mobile.lab.tools.PrepareStores;
+import mx.tec.mobile.lab.tools.Prepare;
 import mx.tec.mobile.lab.vo.Donador;
 import mx.tec.mobile.lab.vo.Tienda;
 
@@ -24,7 +24,7 @@ public class DonorController {
 	StoreManager storeManager;
 	
 	@Autowired
-	PrepareStores prepareStores;
+	Prepare prepareStores;
 	
 	public DonorController() {
 		

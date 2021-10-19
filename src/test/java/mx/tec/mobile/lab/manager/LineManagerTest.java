@@ -15,7 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import mx.tec.mobile.lab.repository.DonationRepository;
 import mx.tec.mobile.lab.repository.LineaRepository;
-import mx.tec.mobile.lab.tools.PrepareLine;
+import mx.tec.mobile.lab.tools.Prepare;
 import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
 
@@ -37,7 +37,7 @@ public class LineManagerTest {
 		LineManager manager = new LineManager();
 		manager.repository = this.lineRepository;
 		
-		PrepareLine prepareLine = new PrepareLine();
+		Prepare prepareLine = new Prepare();
 		
 		// Given
 		Linea product1 =new Linea("189087", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f, "no entregado");
