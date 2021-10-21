@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import mx.tec.mobile.lab.repository.LineaRepository;
+import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
 
 @Service
@@ -22,5 +23,10 @@ public class LineManager {
 	public List<Linea> retrieveProducts(){
 		return repository.findAll(); 
 	}
+	
+	public void updateLine(Linea producto) {
+		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
+	}
+	
 
 }
