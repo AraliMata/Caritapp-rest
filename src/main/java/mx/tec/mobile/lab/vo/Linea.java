@@ -39,7 +39,7 @@ public class Linea {
 	
 	
 	@JsonIgnore
-	@ManyToOne(optional = false)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Donation donacion;
 	
 
