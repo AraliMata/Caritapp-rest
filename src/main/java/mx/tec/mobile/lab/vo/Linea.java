@@ -64,6 +64,7 @@ public class Linea {
 		this.id = id;
 	}
 	
+
 	public String getUpc() {
 		return this.upc;
 	}
