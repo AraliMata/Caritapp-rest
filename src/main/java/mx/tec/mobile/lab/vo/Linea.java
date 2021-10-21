@@ -56,9 +56,23 @@ public class Linea {
 		this.status = status;
 	}
 	
+	public long getId() {
+		return this.id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+
 	public String getUpc() {
 		return this.upc;
 	}
+	
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+	
 	
 	public Float getCantidadSupuesta() {
 		return this.cantidadSupuesta;
@@ -78,6 +92,18 @@ public class Linea {
 	
 	public String getDestino() {
 		return this.destino;
+	}
+	
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+	
+	public String getStatus() {
+		return this.status;
+	}
+	
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	public void setDonation(Donation donation) {

@@ -22,5 +22,11 @@ public class LineManager {
 	public List<Linea> retrieveProducts(){
 		return repository.findAll(); 
 	}
+	
+	public void updateLine(Linea producto) {
+		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
+	}
+	
 
 }
+
