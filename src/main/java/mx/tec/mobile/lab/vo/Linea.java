@@ -46,8 +46,7 @@ public class Linea {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Linea(long id, String upc, String dest,  Float cant_rec, Float cant_sup,  Float prec_tot,  Float prec_un, String status) {
-		this.id = id;
+	public Linea(String upc, String dest,  Float cant_rec, Float cant_sup,  Float prec_tot,  Float prec_un, String status) {
 		this.cantidadRecibida = cant_rec;
 		this.cantidadSupuesta = cant_sup;
 		this.destino = dest;
