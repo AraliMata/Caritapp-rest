@@ -11,6 +11,7 @@ import mx.tec.mobile.lab.vo.Tienda;
 
 @Repository
 public interface StoreRepository extends JpaRepository<Tienda, Long> {
+	//Select a store by given donor id
 	@Query(value = "SELECT * FROM tienda where donador_id = ?1", nativeQuery = true)
 	Optional<List<Tienda>> getTiendasByDonador(long donador_id);
 	

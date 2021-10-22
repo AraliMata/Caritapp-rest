@@ -17,6 +17,7 @@ public class Prepare {
 		// TODO Auto-generated constructor stub
 	}
 	
+	//Relate a given list of products with a given donation 
 	public List<Linea> allocateDonation(Donation donacion, List<Linea> productos) {
 		List<Linea> productos_actualizados = new ArrayList<Linea>();
 		
@@ -30,6 +31,7 @@ public class Prepare {
 		return productos_actualizados;
 	}
 	
+	//Relate a given list of stores with a given donor 
 	public List<Tienda> allocateDonor(Donador donador, List<Tienda> tiendas) {
 		List<Tienda> tiendas_actualizadas = new ArrayList<Tienda>();
 		
@@ -42,6 +44,7 @@ public class Prepare {
 		return tiendas_actualizadas;
 	}
 	
+	//Get the names of a received store list
 	public List<String> getStoresName(List<Tienda> tiendas){
 		List<String> nombres = new ArrayList<String>();
 		
@@ -53,6 +56,7 @@ public class Prepare {
 		
 	}
 	
+	//Get the ids of a received donation list
 	public List<String> getDonationsId(List<Donation> donations){
 		List<String> ids = new ArrayList<String>();
 		

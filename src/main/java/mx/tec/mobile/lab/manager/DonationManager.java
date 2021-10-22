@@ -23,6 +23,7 @@ public class DonationManager {
 		
 	}
 
+	//Save a received donation 
 	public Donation addDonationToHistory(Donation donation) {
 		return repository.save(donation);
 	}
@@ -33,6 +34,7 @@ public class DonationManager {
 	}
 	
 
+	//Get a list of all the donations (List<Donation>)
 	public List<Donation> retrieveDonations(){
 		return repository.findAll();
 	}
