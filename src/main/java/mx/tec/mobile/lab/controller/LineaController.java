@@ -24,6 +24,7 @@ public class LineaController {
 		// TODO Auto-generated constructor stub
 	}
 
+	//Update a received product (Linea)
 	@PostMapping("/product/updateProduct")
 	public Linea updateProduct(@RequestBody Linea producto) {
 		manager.updateLine(producto);
@@ -32,18 +33,18 @@ public class LineaController {
 	}
 	
 	// Get a list of products (Linea objects) by Donation id
-		@GetMapping("/donation/{id}/products")
-		public List<Linea> getProducts(@PathVariable(value = "id") long id) {
-			// Query the database
-			Optional<List<Linea>> retrievedProducts = manager.retrieveDonationProducts(id);
-			// Check if the query found something, and return http status code and content accordingly
-			if (!retrievedProducts.isPresent()) {
-				throw new ResponseStatusException(HttpStatus.NO_CONTENT);
-			}
-			else {
-				return retrievedProducts.get();
-			}
+	@GetMapping("/donation/{id}/products")
+	public List<Linea> getProducts(@PathVariable(value = "id") long id) {
+		// Query the database
+		Optional<List<Linea>> retrievedProducts = manager.retrieveDonationProducts(id);
+		// Check if the query found something, and return http status code and content accordingly
+		if (!retrievedProducts.isPresent()) {
+			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 		}
+		else {
+			return retrievedProducts.get();
+		}
+	}
 }
 
 
