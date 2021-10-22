@@ -13,7 +13,6 @@ import org.springframework.web.server.ResponseStatusException;
 import mx.tec.mobile.lab.manager.DonationManager;
 import mx.tec.mobile.lab.tools.Prepare;
 import mx.tec.mobile.lab.vo.Donation;
-import mx.tec.mobile.lab.vo.Linea;
 
 @RestController
 public class DonationController {
@@ -42,7 +41,6 @@ public class DonationController {
 		List<Donation> donations = manager.retrieveDonations();
 		return prepare.getDonationsId(donations);
 	}
-
 	
 	//Get a list of all the donations
 	@GetMapping("/donation/getDonations")
@@ -50,17 +48,4 @@ public class DonationController {
 		return manager.retrieveDonations();
 	}
 
-	// Get a list of products (Linea objects) by Donation id
-	@GetMapping("/donation/{id}/products")
-	public List<Linea> getProducts(@PathVariable(value = "id") long id) {
-		// Query the database
-		Optional<List<Linea>> retrievedProducts = manager.retrieveDonationProducts(id);
-		// Check if the query found something, and return http status code and content accordingly
-		if (!retrievedProducts.isPresent()) {
-			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
-		}
-		else {
-			return retrievedProducts.get();
-		}
-	}
 }

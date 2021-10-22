@@ -37,9 +37,4 @@ public class DonationManager {
 		return repository.findAll();
 	}
 
-	// Find all products (Linea objects) by Donation id
-	public Optional<List<Linea>> retrieveDonationProducts(long id) {
-		return repositoryLinea.getProductsByDonationId(id);
-	}
-
 }
