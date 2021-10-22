@@ -1,5 +1,7 @@
 package mx.tec.mobile.lab.manager;
 import java.util.List;
+import java.util.Optional;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -27,6 +29,10 @@ public class LineManager {
 		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
 	}
 	
+	// Find all products (Linea objects) by Donation id
+	public Optional<List<Linea>> retrieveDonationProducts(long id) {
+		return repository.getProductsByDonationId(id);
+	}
 
 }
 
