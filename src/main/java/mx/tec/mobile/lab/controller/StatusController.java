@@ -47,14 +47,17 @@ public class StatusController {
 		
 		//Put the new status object
 		@PutMapping("/status/updateStatus/{id}")
-		public Optional<Status> replaceStatus(@RequestBody Status newStatus, @PathVariable(value = "id") long id ) {
+		public Status replaceStatus(@RequestBody Status newStatus, @PathVariable(value = "id") long id ) {
 			return manager.retrieveStatus(id) 
 			.map(status ->{
 				status.setEstado(newStatus.getEstado());
 				//status.setFecha(null);
+				return manager.updateStatus(status);
+			})
+			.orElseGet(() -> {
 				return manager.updateStatus(newStatus);
 			});
-		}
+			}
 		
 
 }
