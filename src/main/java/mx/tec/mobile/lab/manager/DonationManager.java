@@ -33,10 +33,6 @@ public class DonationManager {
 		return repository.findById(id); 
 	}
 	
-	//Get a product (Linea) by id
-	public Linea retrieveProductById(long id) {
-		return repository.findById(id).get(); 
-	}
 
 	//Get a list of all the donations (List<Donation>)
 	public List<Donation> retrieveDonations(){
