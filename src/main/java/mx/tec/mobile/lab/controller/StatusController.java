@@ -51,7 +51,7 @@ public class StatusController {
 			return manager.retrieveStatus(id) 
 			.map(status ->{
 				status.setEstado(newStatus.getEstado());
-				//status.setFecha(null);
+				status.setFecha(newStatus.getFecha());
 				return manager.updateStatus(status);
 			})
 			.orElseGet(() -> {
