@@ -18,14 +18,17 @@ public class LineManager {
 		
 	}
 	
+	//Save a received product list (List<Linea>) 
 	public List<Linea> addProducts(List<Linea> products) {
 		return repository.saveAll(products);
 	}
 	
+	//Get a list of all the products (List<Linea>)
 	public List<Linea> retrieveProducts(){
 		return repository.findAll(); 
 	}
 	
+	//Update a received product
 	public void updateLine(Linea producto) {
 		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
 	}

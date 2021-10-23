@@ -28,7 +28,7 @@ public class createDonationController {
 	@Autowired
 	Prepare prepareLine;
 	
-		
+	//Create a new donation given a Donation	
 	@PostMapping("/donation/createDonation/create")
 	public long createNewDonation(@RequestBody Donation donation) {
 		Donation prepared_donation = new Donation(donation.getDonador(), donation.getTienda(), donation.getKilosDonados(), donation.getKilosRecibidos(), donation.getFecha());
@@ -37,6 +37,7 @@ public class createDonationController {
 		return added_donation.getId();
 	}
 	
+	//Add a received list of products (List<Linea>) related with a donation id
 	@PostMapping("/donation/createDonation/importProducts/{id}")
 	public List<Linea> importProducts(@RequestBody List<Linea> products, @PathVariable(value = "id") long id) {
 		Donation donation_created = manager.retrieveDonation(id).get();

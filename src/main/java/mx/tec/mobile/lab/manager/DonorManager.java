@@ -15,14 +15,17 @@ public class DonorManager {
 	@Autowired
 	public DonorRepository repository;
 	
+	//Save a received list of donors (List<Donador>)
 	public List<Donador> addDonors(List<Donador> donadores) {
 		return repository.saveAll(donadores);
 	}
 	
+	//Get a donor by donor id
 	public Donador retrieveDonor(long id) {
 		return repository.findById(id).get();
 	}
 	
+	//Get a list of all the donors (List<Donador>)
 	public List<Donador> retrieveDonors() {
 		return repository.findAll();
 	}

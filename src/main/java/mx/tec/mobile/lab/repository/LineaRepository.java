@@ -21,6 +21,7 @@ public interface LineaRepository extends JpaRepository<Linea, Long> {
 	Optional<List<Linea>> getProductsByDonationId(long id);
 
 	
+	//Update a product by given product id
 	@Transactional
 	@Modifying
 	@Query(value = "UPDATE linea l set l.destino = ?2, l.status = ?3  WHERE l.id = ?1", nativeQuery = true)
