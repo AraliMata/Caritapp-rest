@@ -28,6 +28,11 @@ public class LineManager {
 		return repository.findAll(); 
 	}
 	
+	//Get a product (Linea) by id
+	public Linea retrieveProductById(long id) {
+		return repository.findById(id).get(); 
+	}
+	
 	//Update a received product
 	public void updateLine(Linea producto) {
 		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
