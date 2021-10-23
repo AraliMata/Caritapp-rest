@@ -6,8 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import mx.tec.mobile.lab.manager.StatusManager;
@@ -37,10 +39,22 @@ public class StatusController {
 			}
 		}
 		
-		
+		//Get a list of all status
 		@GetMapping("/status/getStatus")
 		public List<Status> getStatuses(){
 			return manager.retrieveStatuses();
 		}
+		
+		//Put the new status object
+		@PutMapping("/status/updateStatus/{id}")
+		public Optional<Status> replaceStatus(@RequestBody Status newStatus, @PathVariable(value = "id") long id ) {
+			return manager.retrieveStatus(id) 
+			.map(status ->{
+				status.setEstado(newStatus.getEstado());
+				//status.setFecha(null);
+				return manager.updateStatus(newStatus);
+			});
+		}
+		
 
 }
