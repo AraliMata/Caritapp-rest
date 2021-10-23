@@ -6,11 +6,11 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 import mx.tec.mobile.lab.repository.LineaRepository;
-import mx.tec.mobile.lab.vo.Donation;
 import mx.tec.mobile.lab.vo.Linea;
 
 @Service
 public class LineManager {
+	// Set up repository
 	@Resource
 	public LineaRepository repository;
 	
@@ -23,19 +23,14 @@ public class LineManager {
 		return repository.saveAll(products);
 	}
 	
+	//Get a list of all the products (List<Linea>)
+	public List<Linea> retrieveProducts(){
+		return repository.findAll(); 
+	}
+	
 	//Update a received product
 	public void updateLine(Linea producto) {
 		repository.updateLinea(producto.getId(), producto.getDestino(), producto.getStatus());
-	}
-	
-	// Find product by id
-	public Linea retrieveProductById(long id) {
-		return repository.findById(id).get(); 
-	}
-	
-	//Get a list of all the products (List<Linea>)
-		public List<Linea> retrieveProducts(){
-			return repository.findAll(); 
 	}
 	
 	// Find all products (Linea objects) by Donation id

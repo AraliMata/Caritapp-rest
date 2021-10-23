@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.annotation.Resource;
 
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import mx.tec.mobile.lab.repository.DonationRepository;
 import mx.tec.mobile.lab.repository.LineaRepository;
 import mx.tec.mobile.lab.tools.Prepare;
@@ -40,8 +40,8 @@ public class LineManagerTest {
 		Prepare prepareLine = new Prepare();
 		
 		// Given
-		Linea product1 =new Linea("486512", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f, "no entregado");
-		Donation donation = donationManager.retrieveDonation(76).get();
+		Linea product1 =new Linea("189087", "Indefinido", 34.5f, 34.5f, 40.0f, 5.0f, "no entregado");
+		Donation donation = donationManager.retrieveDonation(129).get();
 		List<Linea> products = new ArrayList<Linea>();
 		products.add(product1);
 		List<Linea> input = prepareLine.allocateDonation(donation, products);
@@ -53,25 +53,29 @@ public class LineManagerTest {
 		assertEquals(input, output);
 	}
 	
-	
 	@Test
-	void testUpdateLine() {
+	void testRetrieveProducts() {
 		LineManager manager = new LineManager();
 		manager.repository = this.lineRepository;
 		
-		//Given 
-		long id = 160; 
-		Linea input = manager.retrieveProductById(id);
-		input.setDestino("Avalos");
-		input.setStatus("Recibido");
+		// Given
+		int donacionId = 129;
 		
-		//When 
-		manager.updateLine(input);
-		Linea output = manager.retrieveProductById(id);
+		// When
+		Optional<List<Linea>> products = manager.retrieveDonationProducts(donacionId);
 		
-		//Then 
-		assertEquals(input.getDestino(), output.getDestino());
-		assertEquals(input.getStatus(), output.getStatus());
+		// Then
+		assertEquals(products.get().size(), 10);
+		
+		/*
+		if (!products.isPresent()) {
+			// fail test
+		}
+		else {
+			assertEquals(products.get().size(), 10);
+		}
+		*/
+		
 	}
 	
 
