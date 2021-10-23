@@ -11,6 +11,7 @@ import mx.tec.mobile.lab.vo.Linea;
 
 @Service
 public class LineManager {
+	// Set up repository
 	@Resource
 	public LineaRepository repository;
 	
