@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,7 +19,6 @@ public class Status {
 	@Id
 	@GeneratedValue	
 	private long id;
-	
 
 	@JsonProperty
 	@OneToOne()
@@ -28,7 +28,13 @@ public class Status {
 	@Column(name = "Estado")
 	private String estado;
 
-	
+	@PrePersist
+    public void prePersist() {
+        if(estado.isEmpty()) {
+        	estado = "En Tienda";
+        }
+    }
+
 	@JsonProperty
 	@JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT-6")
 	private Calendar fecha;
@@ -61,4 +67,6 @@ public class Status {
 	public long getId() {
 		return this.id;
 	}
+
 }
+
