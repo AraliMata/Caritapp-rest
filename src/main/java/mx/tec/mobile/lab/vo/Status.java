@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+<<<<<<< HEAD
+=======
+import javax.persistence.PrePersist;
+>>>>>>> 43bdb89f083340e9478f51b76a8a4e9ee52bc267
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,7 +22,10 @@ public class Status {
 	@Id
 	@GeneratedValue	
 	private long id;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 43bdb89f083340e9478f51b76a8a4e9ee52bc267
 
 	@JsonProperty
 	@OneToOne()
@@ -27,6 +34,15 @@ public class Status {
 	@JsonProperty
 	@Column(name = "Estado")
 	private String estado;
+<<<<<<< HEAD
+=======
+	@PrePersist
+    public void prePersist() {
+        if(estado.isEmpty()) {
+        	estado = "En Tienda";
+        }
+    }
+>>>>>>> 43bdb89f083340e9478f51b76a8a4e9ee52bc267
 
 	
 	@JsonProperty
@@ -61,4 +77,8 @@ public class Status {
 	public long getId() {
 		return this.id;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 43bdb89f083340e9478f51b76a8a4e9ee52bc267
