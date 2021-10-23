@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import mx.tec.mobile.lab.repository.DonationRepository;
 import mx.tec.mobile.lab.repository.LineaRepository;
 import mx.tec.mobile.lab.vo.Donation;
-import mx.tec.mobile.lab.vo.Linea;
 
 @Service
 public class DonationManager {
