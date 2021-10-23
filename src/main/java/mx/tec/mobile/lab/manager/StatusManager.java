@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import mx.tec.mobile.lab.repository.StatusRepository;
 import mx.tec.mobile.lab.vo.Status;
-import mx.tec.mobile.lab.vo.Donation;
 
 @Service
 public class StatusManager {
@@ -21,11 +20,20 @@ public class StatusManager {
 	
 	
 	
-	// Find Donation by id
-		public Optional<Donation> retrieveStatus(long id) {
+		// Find Status by id
+		public Optional<Status> retrieveStatus(long id) {
 			return repository.findById(id); 
 		}
 		
+		// List of all status
+		public List<Status> retrieveStatuses(){
+			return repository.findAll();
+		}
+		
+		//Save new Status Object
+		public Status updateStatus(Status status){
+			return repository.save(status);
+		}
 	
 
 }
