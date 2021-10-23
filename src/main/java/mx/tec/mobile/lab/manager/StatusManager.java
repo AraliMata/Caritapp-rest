@@ -19,18 +19,13 @@ public class StatusManager {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Status addStatusToHistory(Status status) {
-		return repository.save(status);
-	}
+	
 	
 	// Find Donation by id
 		public Optional<Donation> retrieveStatus(long id) {
 			return repository.findById(id); 
 		}
 		
-		public List<Status> retrieveStatus(){
-			return repository.findAll();
-		}
 	
 
 }
