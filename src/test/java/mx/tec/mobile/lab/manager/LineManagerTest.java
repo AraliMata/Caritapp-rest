@@ -54,6 +54,27 @@ public class LineManagerTest {
 	}
 	
 	@Test
+	void testUpdateLine() {
+		LineManager manager = new LineManager();
+		manager.repository = this.lineRepository;
+		
+		//Given 
+		long id = 160; 
+		Linea input = manager.retrieveProductById(id);
+		input.setDestino("Avalos");
+		input.setStatus("Recibido");
+		
+		//When 
+		manager.updateLine(input);
+		Linea output = manager.retrieveProductById(id);
+		
+		//Then 
+		assertEquals(input.getDestino(), output.getDestino());
+		assertEquals(input.getStatus(), output.getStatus());
+	}
+	
+	
+	@Test
 	void testRetrieveProducts() {
 		LineManager manager = new LineManager();
 		manager.repository = this.lineRepository;
