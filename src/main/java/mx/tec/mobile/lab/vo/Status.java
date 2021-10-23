@@ -65,6 +65,6 @@ public class Status {
 	}
 	
 	public long getId() {
-		return this.id;
+		return this.id; 
 	}
 }
