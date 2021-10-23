@@ -33,6 +33,11 @@ public class LineManager {
 		return repository.findById(id).get(); 
 	}
 	
+	//Get a list of all the products (List<Linea>)
+		public List<Linea> retrieveProducts(){
+			return repository.findAll(); 
+	}
+	
 	// Find all products (Linea objects) by Donation id
 	public Optional<List<Linea>> retrieveDonationProducts(long id) {
 		return repository.getProductsByDonationId(id);
