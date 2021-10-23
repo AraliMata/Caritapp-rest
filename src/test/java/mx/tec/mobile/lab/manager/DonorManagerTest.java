@@ -21,7 +21,7 @@ class DonorManagerTest {
 	@Resource
 	private DonorRepository repository;
 	
-	/*@Test   //Descomentar para probar
+	/*@Test
 	void addDonors() {
 		DonorManager manager = new DonorManager();
 		manager.repository = this.repository;
