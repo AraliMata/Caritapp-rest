@@ -13,8 +13,11 @@ import mx.tec.mobile.lab.vo.Linea;
 
 @Repository
 public interface LineaRepository extends JpaRepository<Linea, Long> {
+	
 	// Get all donation products by given Donation id
+	// Set up sql query
 	@Query(value = "SELECT * FROM linea WHERE donacion_id = ?1", nativeQuery = true)
+	// Define type returned and function name and parameters
 	Optional<List<Linea>> getProductsByDonationId(long id);
 
 	

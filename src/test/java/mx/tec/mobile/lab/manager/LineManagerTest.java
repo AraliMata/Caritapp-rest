@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.annotation.Resource;
 
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import mx.tec.mobile.lab.repository.DonationRepository;
 import mx.tec.mobile.lab.repository.LineaRepository;
 import mx.tec.mobile.lab.tools.Prepare;
@@ -51,6 +51,31 @@ public class LineManagerTest {
 		
 		// Then
 		assertEquals(input, output);
+	}
+	
+	@Test
+	void testRetrieveProducts() {
+		LineManager manager = new LineManager();
+		manager.repository = this.lineRepository;
+		
+		// Given
+		int donacionId = 129;
+		
+		// When
+		Optional<List<Linea>> products = manager.retrieveDonationProducts(donacionId);
+		
+		// Then
+		assertEquals(products.get().size(), 10);
+		
+		/*
+		if (!products.isPresent()) {
+			// fail test
+		}
+		else {
+			assertEquals(products.get().size(), 10);
+		}
+		*/
+		
 	}
 	
 
