@@ -33,19 +33,18 @@ class DonationManagerTest {
 		assertEquals("Walmart", savedDonation.getDonador());
 	}
 	
-	/*@Test
+	@Test
 	void testRetrieveDonation() {
 		//Given 
 		DonationManager manager = new DonationManager();
-		long idDonation = 89;
+		long idDonation = 129;
 		
 		//When
-		Donation donation_retreived = manager.retrieveDonation(idDonation).get();
+		Donation donation_retrieved = manager.retrieveDonation(idDonation).get();
 		
 		
 		//Then
-		assertTrue(donation_retreived)
-		
-	}*/
+		assertEquals("Prueba1", donation_retrieved.getDonador());
+	}
 
 }
